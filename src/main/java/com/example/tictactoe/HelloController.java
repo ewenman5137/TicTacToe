@@ -3,9 +3,17 @@ package com.example.tictactoe;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class HelloController {
+    @FXML
+    private Label annoceLeTour;
+
+    @FXML
+    private ImageView image;
     @FXML
     private Button bouton0;
 
@@ -45,6 +53,8 @@ public class HelloController {
 
     @FXML
     private Label scoreDuJoueur2;
+    // Création de l'image
+
     private int x=0;
 
     public void AfficheJoueur1(Joueur joueur){
@@ -61,16 +71,32 @@ public class HelloController {
         nomDuJoueur2.setText(partie.getNameJoueur2());
         scoreDuJoueur1.setText(""+partie.getScoreJoueur1());
         scoreDuJoueur2.setText(""+partie.getScoreJoueur2());
+
     }
+
     @FXML
     void onClick(ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
         if(clickedButton.getText().equals("")){
             if (x%2==0){
                 clickedButton.setText("X");
+                Image croixLien = new Image("file:D:\\GitEspace\\TicTacToe\\src\\main\\java\\com\\example\\tictactoe\\signe-de-la-croix.png");
+                ImageView croix = new ImageView(croixLien);
+                croix.setFitHeight(60);
+                croix.setFitWidth(60);
+                clickedButton.setGraphic(croix);
+                clickedButton.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+                annoceLeTour.setText("C'est au tour de : "+partie.getNameJoueur1());
             }
             else{
+                Image cercleLien = new Image("file:D:\\GitEspace\\TicTacToe\\src\\main\\java\\com\\example\\tictactoe\\cercle.png");
+                ImageView cercle = new ImageView(cercleLien);
+                cercle.setFitHeight(60);
+                cercle.setFitWidth(60);
+                clickedButton.setGraphic(cercle);
                 clickedButton.setText("O");
+                clickedButton.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+                annoceLeTour.setText("C'est au tour de : "+partie.getNameJoueur2());
             }
             x++;
         }
