@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e5bb6c1-3b34-4a38-a7dc-859808b628dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/cercle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/signe-de-la-croix.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/fermer-la-croix.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/HelloAcceuille.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/HelloAcceuille.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,22 +44,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/GitEspace/TicTacToe/src/main/java/com/example/tictactoe",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitEspace\TicTacToe\src\main\java\com\example\tictactoe" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GitEspace\TicTacToe\src\main\java\com\example\tictactoe" />
     </key>
@@ -96,6 +102,7 @@
       <workItem from="1683612742223" duration="1589000" />
       <workItem from="1683614808233" duration="198000" />
       <workItem from="1683615062477" duration="4027000" />
+      <workItem from="1683889670705" duration="10226000" />
     </task>
     <servers />
   </component>
