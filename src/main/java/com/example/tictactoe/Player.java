@@ -1,10 +1,12 @@
 package com.example.tictactoe;
 
-public class Joueur {
+public class Player {
     private String name;
     private int score;
-    public Joueur(String name){
+    private boolean round;
+    public Player(String name,Boolean round){
         this.name =name;
+        this.round=round;
         score=0;
     }
 
@@ -22,10 +24,17 @@ public class Joueur {
     public void setName(String name) {
         this.name = name;
     }
+    public boolean getRound(){
+        return round;
+    }
+
+    public void setRound(boolean round) {
+        this.round = round;
+    }
 
     @Override
     public String toString() {
-        return "Salut, Je suis "+name+" et mon score est de : "+score;
+        return "Hello, I'm "+name+" and my score is : "+score;
     }
 
 }

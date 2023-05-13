@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" />
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="700.0" style="-fx-background-color: #27265A;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe.Home">
+   <children>
+      <Label layoutX="272.0" layoutY="37.0" style="text: #F3EBEB;" text="TicTacToe" textFill="#f3ebeb">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="41.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@engrenage.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="618.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@CroixRouge.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="buttonRules" layoutX="150.0" layoutY="665.0" mnemonicParsing="false" onAction="#enterInRules" prefHeight="75.0" prefWidth="400.0" style="-fx-background-radius: 15px;" text="Back">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+      <Label layoutX="50.0" layoutY="175.0" prefHeight="50.0" prefWidth="478.0" text="1. Tic Tac Toe is played on a 3x3 square grid. " textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="50.0" layoutY="235.0" prefHeight="53.0" prefWidth="582.0" text="2 .  Two players share the grid, taking turns. One player" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="80.0" layoutY="270.0" prefHeight="53.0" prefWidth="575.0" text=" has the X symbol and the other has the O symbol." textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="50.0" layoutY="320.0" prefHeight="53.0" prefWidth="600.0" text="3. The first player to get three of their symbols in a row, " textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="80.0" layoutY="355.0" prefHeight="53.0" prefWidth="394.0" text=" column, or diagonal wins the game." textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="50.0" layoutY="405.0" prefHeight="50.0" prefWidth="636.0" text="4. If all squares are filled without either player getting three" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="80.0" layoutY="440.0" prefHeight="50.0" prefWidth="606.0" text="of their symbols in a row, the game is declared a draw." textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
