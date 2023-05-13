@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
 public class HelloController {
 
     @FXML
@@ -69,7 +70,7 @@ public class HelloController {
     // Création de l'image
 
     private int x=0;
-    Image croixPourPartirLiens = new Image("file:D:\\GitEspace\\TicTacToe\\src\\main\\java\\com\\example\\tictactoe\\fermer-la-croix.png");
+    Image croixPourPartirLiens = new Image("file:E:\\test_projet\\TicTacToe\\src\\main\\java\\com\\example\\tictactoe\\fermer-la-croix.png");
     ImageView croixPourPartir = new ImageView(croixPourPartirLiens);
 
 
@@ -99,15 +100,18 @@ public class HelloController {
         if (clickedButton.getText().equals("")) {
             if (x % 2 == 0) {
                 clickedButton.setText("X");
-                Image croixLien = new Image("file:D:\\GitEspace\\TicTacToe\\src\\main\\java\\com\\example\\tictactoe\\signe-de-la-croix.png");
+                Image croixLien = new Image("file:E:\\test_projet\\TicTacToe\\src\\main\\java\\com\\example\\tictactoe\\signe-de-la-croix.png");
                 ImageView croix = new ImageView(croixLien);
                 croix.setFitHeight(60);
                 croix.setFitWidth(60);
                 clickedButton.setGraphic(croix);
                 clickedButton.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
                 //annoceLeTour.setText("C'est au tour de : " + partie.getNameJoueur1());
+            } else if (x>=9) {
+                System.out.println("fin de partie");
+
             } else {
-                Image cercleLien = new Image("file:D:\\GitEspace\\TicTacToe\\src\\main\\java\\com\\example\\tictactoe\\cercle.png");
+                Image cercleLien = new Image("file:E:\\test_projet\\TicTacToe\\src\\main\\java\\com\\example\\tictactoe\\cercle.png");
                 ImageView cercle = new ImageView(cercleLien);
                 cercle.setFitHeight(60);
                 cercle.setFitWidth(60);
@@ -118,6 +122,14 @@ public class HelloController {
             }
             verifieEtatGrille();
             x++;
+        }
+    }
+    public void partiNull(){
+        Button listNomBouton[] = {bouton0, bouton1, bouton2, bouton3, bouton4, bouton5, bouton6, bouton7, bouton8};
+        for (int i = 0; i < 9; i++) {
+            if(listNomBouton[i].getText()==""){
+                listNomBouton[i].setDisable(true);
+            }
         }
     }
         public void finDeparti(String quiGagne,Button bouton_1,Button bouton_2,Button bouton_3){

@@ -39,6 +39,8 @@ public class HelloAcceuille {
         // Obtenir la fenêtre actuelle et définir la scène
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Page de Jeu");
+        stage.setWidth(650);
+        stage.setHeight(500);
         stage.setScene(scene);
     }
     @FXML
