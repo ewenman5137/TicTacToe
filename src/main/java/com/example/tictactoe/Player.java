@@ -34,7 +34,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Hello, I'm "+name+" and my score is : "+score;
+        return "Hello, I'm "+name+" and my score is : "+score+" and "+(round?"It's my tourn":"It's not my tourn");
     }
 
 }

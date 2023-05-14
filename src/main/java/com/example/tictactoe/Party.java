@@ -1,11 +1,10 @@
 package com.example.tictactoe;
 
-public class Party {
+public class Party{
     private final Player player1;
     private final Player player2;
     private int scorePlayer1;
     private int scorePlayer2;
-
     public Party(Player player1, Player player2){
         this.player1 = player1;
         this.player2 = player2;
@@ -15,11 +14,20 @@ public class Party {
 
     // Autres méthodes et variables
     public void tour(){
+        System.out.println("etat player 1 : "+player1.getRound());
         player1.setRound(player2.getRound());
         player2.setRound(!player1.getRound());
+        System.out.println("etat après player 1 : "+player1.getRound());
+    }
+    public void setRoundPlayer1(Boolean round){
+        player1.setRound(round);
+    }
+    public void setRoundPlayer2(Boolean round){
+        player2.setRound(round);
     }
 
     public boolean getRoundPlayer1() {
+        Boolean round =player1.getRound();
         return player1.getRound();
     }
     public boolean getRoundPlayer2() {
@@ -45,6 +53,11 @@ public class Party {
     }
     public String getNamePlayer2(){
         return player2.getName();
+    }
+
+    @Override
+    public String toString() {
+        return "This party content : \n"+player1+"\n"+player2;
     }
 }
 

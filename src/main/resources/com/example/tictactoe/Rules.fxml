@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="700.0" style="-fx-background-color: #27265A;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe.Home">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="700.0" style="-fx-background-color: #27265A;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe.Rules">
    <children>
       <Label layoutX="272.0" layoutY="37.0" style="text: #F3EBEB;" text="TicTacToe" textFill="#f3ebeb">
          <font>
@@ -24,11 +24,6 @@
             <Image url="@CroixRouge.png" />
          </image>
       </ImageView>
-      <Button fx:id="buttonRules" layoutX="150.0" layoutY="665.0" mnemonicParsing="false" onAction="#enterInRules" prefHeight="75.0" prefWidth="400.0" style="-fx-background-radius: 15px;" text="Back">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Button>
       <Label layoutX="50.0" layoutY="175.0" prefHeight="50.0" prefWidth="478.0" text="1. Tic Tac Toe is played on a 3x3 square grid. " textFill="WHITE">
          <font>
             <Font size="24.0" />
@@ -64,5 +59,10 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <Button fx:id="buttonBackToHome" layoutX="170.0" layoutY="651.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="75.0" prefWidth="400.0" style="-fx-background-radius: 15px;" text="Back To home">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

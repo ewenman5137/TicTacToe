@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
@@ -17,7 +16,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 
-public class GridMatch {
+public class GridMatch{
     @FXML
     private Pane backgroundPPPlayer1;
 
@@ -78,13 +77,15 @@ public class GridMatch {
     @FXML
     private Label scorePlayer2;
     private int x=0;
-    Image croixToExitPageLiens = new Image("file:E:\\test_projet\\TicTacToe\\src\\main\\java\\com\\example\\tictactoe\\fermer-la-croix.png");
+    Image croixToExitPageLiens = new Image("file:/fermer-la-croix.png");
     ImageView croixToExitPage = new ImageView(croixToExitPageLiens);
+    private static Party party;
 
-    private Party party;
-
-    public void setParty(Party party) {
-        this.party = party;
+    public void StartParty(Player player1, Player player2){
+        party =new Party(player1,player2);
+        setParty(party);
+    }
+    public void setParty(Party party){
         namePlayer1.setText(party.getNamePlayer1());
         namePlayer2.setText(party.getNamePlayer2());
         scorePlayer1.setText(""+ party.getScorePlayer1());
@@ -99,19 +100,20 @@ public class GridMatch {
             backgroundPPPlayer1.setStyle("-fx-border-color: black");
             backgroundPPPlayer2.setStyle("-fx-border-color: Blue");
         }
-
     }
 
     @FXML
     void onClick(ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
+        System.out.println(party);
         if (clickedButton.getText().equals("")) {
+            System.out.println(party.getRoundPlayer1());
             if (party.getRoundPlayer1()) {
                 party.tour();
                 backgroundPPPlayer2.setStyle("-fx-border-color: Blue");
                 backgroundPPPlayer1.setStyle("-fx-border-color: black");
                 clickedButton.setText("X");
-                Image croixLien = new Image("file:E:\\test_projet\\TicTacToe\\src\\main\\java\\com\\example\\tictactoe\\signe-de-la-croix.png");
+                Image croixLien = new Image("file:E:\\test_projet\\TicTacToe\\src\\main\\resources\\com\\example\\tictactoe\\fermer-la-croix.png");
                 ImageView croix = new ImageView(croixLien);
                 croix.setFitHeight(60);
                 croix.setFitWidth(60);
@@ -123,22 +125,22 @@ public class GridMatch {
                 x=0;
 
             } else {
-                party.tour();
-                backgroundPPPlayer2.setStyle("-fx-border-color: black");
-                backgroundPPPlayer1.setStyle("-fx-border-color: Blue");
-                Image circleLiens = new Image("file:E:\\test_projet\\TicTacToe\\src\\main\\java\\com\\example\\tictactoe\\cercle.png");
-                ImageView circle = new ImageView(circleLiens);
-                circle.setFitHeight(60);
-                circle.setFitWidth(60);
-                clickedButton.setGraphic(circle);
-                clickedButton.setText("O");
-                clickedButton.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-                //annoceLeTour.setText("C'est au tour de : " + partie.getNameJoueur2());
+                    party.tour();
+                    backgroundPPPlayer2.setStyle("-fx-border-color: black");
+                    backgroundPPPlayer1.setStyle("-fx-border-color: Blue");
+                    Image circleLiens = new Image("file:E:\\test_projet\\TicTacToe\\src\\main\\resources\\com\\example\\tictactoe\\vide.png");
+                    ImageView circle = new ImageView(circleLiens);
+                    circle.setFitHeight(60);
+                    circle.setFitWidth(60);
+                    clickedButton.setGraphic(circle);
+                    clickedButton.setText("O");
+                    clickedButton.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+                    //annoceLeTour.setText("C'est au tour de : " + partie.getNameJoueur2());
+                }
+                verifieEtatGrille();
+                x++;
             }
-            verifieEtatGrille();
-            x++;
         }
-    }
     public void partyNull(){
         Button[] listNameButton = {button0, button1, button2, button3, button4, button5, button6, button7, button8};
         for (int i = 0; i < 9; i++) {
@@ -239,6 +241,7 @@ public class GridMatch {
             listNameButton[i].setDisable(false);
             listNameButton[i].setStyle("-fx-background-color: red");
         }
+        setParty(party);
     }
 
 }

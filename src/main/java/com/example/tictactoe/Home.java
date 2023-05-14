@@ -31,7 +31,7 @@ public class Home {
 
         @FXML
         void enterInRules(ActionEvent event) throws IOException {
-            FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("Rules.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Rules.class.getResource("Rules.fxml"));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Rules");
@@ -39,9 +39,12 @@ public class Home {
         }
 
         @FXML
-        void enterInSimplePlayer(ActionEvent event) {
-            System.out.println("Let's go to Simple page");
-
+        void enterInSimplePlayer(ActionEvent event) throws IOException {
+            FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("SinglePlayer.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("Single player");
+            stage.setScene(scene);
         }
 
 }

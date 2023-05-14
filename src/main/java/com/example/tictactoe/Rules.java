@@ -12,14 +12,16 @@ import java.io.IOException;
 
 public class Rules {
     @FXML
-    private Button buttonRules;
+    private Button buttonBackToHome;
 
     @FXML
-    void enterInRules(ActionEvent event) throws IOException {
+    void returnToHome(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("Home.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Home");
         stage.setScene(scene);
+
     }
+
 }

@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -26,43 +27,57 @@ public class Multiplayer {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("GridMatch.fxml"));
         Parent root = loader.load();
 
-        // Obtenir le contrôleur de la page de jeu
+        determineStartingPlayer();
+
+        // Get the controller from the FXMLLoader
         GridMatch gridMatch = loader.getController();
-        Party party = new Party(APlayer1, APlayer2);
-        switch (whoStart){
-            case("Random"):
+        gridMatch.StartParty(APlayer1,APlayer2);
+
+        loadCustomMenuScene(event);
+    }
+
+
+
+    private void determineStartingPlayer() {
+        switch (whoStart) {
+            case "Random":
                 Random rand = new Random();
-                int whoStart = rand.nextInt(100);
-                System.out.println(whoStart);
-                if(whoStart%2==0) {
-                    APlayer1.setRound(false);
-                    APlayer2.setRound(true);
-                }else{
-                    APlayer1.setRound(true);
-                    APlayer2.setRound(false);
+                if (rand.nextInt(100) % 2 == 0) {
+                    setPlayerRounds(APlayer1, false, APlayer2, true);
+                } else {
+                    setPlayerRounds(APlayer1, true, APlayer2, false);
                 }
                 break;
-            case("Player 1"):
-                APlayer1.setRound(true);
-                APlayer2.setRound(false);
-                break;
-            case("Player 2"):
-                APlayer1.setRound(false);
-                APlayer2.setRound(true);
-                break;
-        }
-        gridMatch.setParty(party);
 
-        // Créer une nouvelle scène avec la page de jeu
+            case "Player 1":
+                setPlayerRounds(APlayer1, true, APlayer2, false);
+            break;
+            case "Player 2":
+                setPlayerRounds(APlayer1, false, APlayer2, true);
+            break;
+        }
+    }
+
+    private void setPlayerRounds(Player player1, boolean player1Round, Player player2, boolean player2Round) {
+        player1.setRound(player1Round);
+        player2.setRound(player2Round);
+    }
+
+    private void loadCustomMenuScene(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("Custom.fxml"));
+        Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
 
-        // Obtenir la fenêtre actuelle et définir la scène
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("Page de Jeu");
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL); // rendre la fenêtre modale
+        stage.setTitle("Menu Custom");
         stage.setWidth(700);
         stage.setHeight(900);
         stage.setScene(scene);
+        stage.showAndWait(); // affiche cette fenêtre et attend qu'elle soit fermée
     }
+
+
 
     @FXML
     private Label labelPlayer1;
