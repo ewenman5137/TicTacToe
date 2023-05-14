@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e5bb6c1-3b34-4a38-a7dc-859808b628dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Custom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/SinglePlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/Custom.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/SinglePlayer.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Bot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/CustomSingle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/CustomSingle.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/GridMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/GridMatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Multiplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Multiplayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Party.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Party.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Rules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Rules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/GridMatch.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/GridMatch.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/Multiplayer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/Multiplayer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/Rules.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/Rules.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/SinglePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/SinglePlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -45,25 +37,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/Github/TicTacToe_final",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Github/TicTacToe_final&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.tictactoe" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\GitEspace\TicTacToe\src\main\java\com\example\tictactoe" />
     </key>
@@ -112,6 +107,7 @@
       <workItem from="1683988077192" duration="182000" />
       <workItem from="1683988267013" duration="11715000" />
       <workItem from="1684049072146" duration="13000000" />
+      <workItem from="1684079174254" duration="1480000" />
     </task>
     <servers />
   </component>

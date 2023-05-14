@@ -34,7 +34,7 @@ public class SinglePlayer {
     private TextField textFieldNamePlayer1;
 
     Player APlayer1 = new Player("Player 1",true);
-    Player APlayer2 = new Player("Jean__bot",false);
+    Bot ABot = new Bot("Jean",false);
     String levelOfBot="Easy";
     @FXML
     void createPlayer1(ActionEvent event) {
@@ -44,18 +44,17 @@ public class SinglePlayer {
 
     @FXML
     void enterInCustomMenuSingle(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("GridMatch.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("CustomSingle.fxml"));
         Parent root = loader.load();
-        GridMatch gridMatch = loader.getController();
-        Party party = new Party(APlayer1, APlayer2);
+        Party party = new Party(APlayer1, ABot);
         switch (levelOfBot){
             case("Easy"):
                 System.out.println("Okay Jean is coming");
-                APlayer2.setName("Jean__Bot");
+                ABot.setName("Jean__Bot");
                 break;
             case("Expert"):
                 System.out.println("Okay Robert is coming");
-                APlayer2.setName("Robert__Bot");
+                ABot.setName("Robert__Bot");
                 break;
         }
         gridMatch.setParty(party);
