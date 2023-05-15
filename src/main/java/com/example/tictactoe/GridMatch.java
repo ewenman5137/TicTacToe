@@ -77,7 +77,7 @@ public class GridMatch{
     @FXML
     private Label scorePlayer2;
     private int x=0;
-    Image croixToExitPageLiens = new Image("file:/fermer-la-croix.png");
+    Image croixToExitPageLiens = new Image("fermer-la-croix.png");
     ImageView croixToExitPage = new ImageView(croixToExitPageLiens);
     private static Party party;
 
@@ -105,46 +105,50 @@ public class GridMatch{
     @FXML
     void onClick(ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
-        System.out.println(party);
         if (clickedButton.getText().equals("")) {
             System.out.println(party.getRoundPlayer1());
             if (party.getRoundPlayer1()) {
-                party.tour();
-                backgroundPPPlayer2.setStyle("-fx-border-color: Blue");
-                backgroundPPPlayer1.setStyle("-fx-border-color: black");
-                clickedButton.setText("X");
-                Image croixLien = new Image("file:E:\\test_projet\\TicTacToe\\src\\main\\resources\\com\\example\\tictactoe\\fermer-la-croix.png");
-                ImageView croix = new ImageView(croixLien);
-                croix.setFitHeight(60);
-                croix.setFitWidth(60);
-                clickedButton.setGraphic(croix);
-                clickedButton.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-                //annoceLeTour.setText("C'est au tour de : " + partie.getNameJoueur1());
-            } else if (x>=9) {
-                System.out.println("fin de partie");
-                x=0;
-
-            } else {
-                    party.tour();
-                    backgroundPPPlayer2.setStyle("-fx-border-color: black");
-                    backgroundPPPlayer1.setStyle("-fx-border-color: Blue");
-                    Image circleLiens = new Image("file:E:\\test_projet\\TicTacToe\\src\\main\\resources\\com\\example\\tictactoe\\vide.png");
-                    ImageView circle = new ImageView(circleLiens);
-                    circle.setFitHeight(60);
-                    circle.setFitWidth(60);
-                    clickedButton.setGraphic(circle);
-                    clickedButton.setText("O");
-                    clickedButton.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-                    //annoceLeTour.setText("C'est au tour de : " + partie.getNameJoueur2());
-                }
-                verifieEtatGrille();
-                x++;
+                System.out.println("je place un X");
+                addXOnButton(clickedButton);
+            }
+            else {
+                addOOnButton(clickedButton);
+            }
+            verifieEtatGrille();
+            x++;
+            party.tour();
+            if(x>=9){
+                partyNull();
             }
         }
+    }
+    public void addXOnButton(Button button){
+        backgroundPPPlayer2.setStyle("-fx-border-color: Blue");
+        backgroundPPPlayer1.setStyle("-fx-border-color: black");
+        button.setText("X");
+        Image croixLien = new Image("fermer-la-croix.png");
+        ImageView croix = new ImageView(croixLien);
+        croix.setFitHeight(60);
+        croix.setFitWidth(60);
+        button.setGraphic(croix);
+        button.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+    }
+    public void addOOnButton(Button button){
+        backgroundPPPlayer2.setStyle("-fx-border-color: black");
+        backgroundPPPlayer1.setStyle("-fx-border-color: Blue");
+        Image circleLiens = new Image("vide.png");
+        ImageView circle = new ImageView(circleLiens);
+        circle.setFitHeight(60);
+        circle.setFitWidth(60);
+        button.setGraphic(circle);
+        button.setText("O");
+        button.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+    }
+
     public void partyNull(){
         Button[] listNameButton = {button0, button1, button2, button3, button4, button5, button6, button7, button8};
         for (int i = 0; i < 9; i++) {
-            if(listNameButton[i].getText()==""){
+            if(listNameButton[i].getText()!=""){
                 listNameButton[i].setDisable(true);
             }
         }
@@ -180,31 +184,18 @@ public class GridMatch{
 
             }
 
-
     private void verifieEtatGrille() {
-        if (button0.getText().equals(button1.getText()) && button1.getText().equals(button2.getText()) && !(button0.getText().equals(""))&&!(button0.getText().equals("Fin"))){
-            endOfMatch(""+ button0.getText(), button0, button1, button2);
-        }
-        if (button3.getText().equals(button4.getText()) && (button4.getText().equals(button5.getText()) && !(button3.getText().equals(""))&&!(button0.getText().equals("Fin")))) {
-            endOfMatch(""+ button3.getText(), button3, button4, button5);
-        }
-        if (button6.getText().equals(button7.getText()) && (button7.getText().equals(button8.getText()) && !(button6.getText().equals(""))&&!(button0.getText().equals("Fin")))) {
-            endOfMatch(""+ button6.getText(), button6, button7, button8);
-        }
-        if (button0.getText().equals(button3.getText()) && (button3.getText().equals(button6.getText()) && !(button0.getText().equals(""))&&!(button0.getText().equals("Fin")))) {
-            endOfMatch(""+ button0.getText(), button3, button6, button0);
-        }
-        if (button1.getText().equals(button4.getText()) && (button4.getText().equals(button7.getText()) && !(button1.getText().equals(""))&&!(button0.getText().equals("Fin")))) {
-            endOfMatch(""+ button1.getText(), button4, button1, button7);
-        }
-        if (button2.getText().equals(button5.getText()) && (button5.getText().equals(button8.getText()) && !(button2.getText().equals(""))&&!(button0.getText().equals("Fin")))) {
-            endOfMatch(""+ button2.getText(), button2, button5, button8);
-        }
-        if (button0.getText().equals(button4.getText()) && (button4.getText().equals(button8.getText()) && !(button0.getText().equals(""))&&!(button0.getText().equals("Fin")))) {
-            endOfMatch(""+ button0.getText(), button0, button4, button8);
-        }
-        if (button2.getText().equals(button4.getText()) && (button4.getText().equals(button6.getText()) && !(button2.getText().equals(""))&&!(button0.getText().equals("Fin")))) {
-            endOfMatch(""+ button2.getText(), button2, button4, button6);
+        int[][] winConditions = new int[][] {
+                {0, 1, 2}, {3, 4, 5}, {6, 7, 8}, // lignes
+                {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, // colonnes
+                {0, 4, 8}, {2, 4, 6}              // diagonales
+        };
+        Button[] listNameButton = {button0, button1, button2, button3, button4, button5, button6, button7, button8};
+        for (int i=0;i<winConditions.length;i++) {
+            if (listNameButton[winConditions[i][0]].getText().equals(listNameButton[winConditions[i][1]].getText()) && listNameButton[winConditions[i][0]].getText().equals(listNameButton[winConditions[i][2]].getText()) && !listNameButton[winConditions[i][2]].getText().equals("")) {
+                System.out.println("Bouton 1 "+listNameButton[winConditions[i][0]].getText()+" Bouton 2 "+listNameButton[winConditions[i][1]].getText()+" Bouton 3 "+listNameButton[winConditions[i][2]].getText());
+                endOfMatch(listNameButton[winConditions[i][0]].getText(), listNameButton[winConditions[i][0]], listNameButton[winConditions[i][1]], listNameButton[winConditions[i][2]]);
+            }
         }
     }
 

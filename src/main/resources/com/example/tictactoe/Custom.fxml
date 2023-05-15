@@ -72,7 +72,7 @@
          <children>
             <ImageView fx:id="symbolPlayer2" fitHeight="105.0" fitWidth="105.0" layoutX="23.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@vide.png" />
+                  <Image url="@../../../vide.png" />
                </image>
             </ImageView>
          </children>

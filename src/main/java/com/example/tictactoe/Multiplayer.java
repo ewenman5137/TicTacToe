@@ -21,18 +21,13 @@ public class Multiplayer {
 
     Player APlayer2 = new Player("Player 2",false);
     String whoStart="Random";
+    @FXML
+    private Button buttonStartGame;
 
     @FXML
     void enterInCustomMenu(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("GridMatch.fxml"));
         Parent root = loader.load();
-
-        determineStartingPlayer();
-
-        // Get the controller from the FXMLLoader
-        GridMatch gridMatch = loader.getController();
-        gridMatch.StartParty(APlayer1,APlayer2);
-
         loadCustomMenuScene(event);
     }
 
@@ -141,5 +136,23 @@ public class Multiplayer {
         buttonPlayer1.setDisable(false);
         buttonPlayer2.setDisable(true);
         whoStart="Player 2";
+    }
+    @FXML
+    void enterInGridMatch(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("GridMatch.fxml"));
+        Parent root = loader.load();
+
+        determineStartingPlayer();
+
+        // Get the controller from the FXMLLoader
+        GridMatch gridMatch = loader.getController();
+        gridMatch.StartParty(APlayer1,APlayer2);
+
+
+        FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("GridMatch.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("GridMatch");
+        stage.setScene(scene);
     }
 }
