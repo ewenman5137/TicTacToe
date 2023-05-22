@@ -106,8 +106,8 @@ public class GridMatch{
         croixToExitPage.setFitHeight(25);
         croixToExitPage.setFitWidth(25);
         if(party.getRoundPlayer1()){
-            backgroundPPPlayer1.setStyle("-fx-border-color: Blue");
-            backgroundPPPlayer1.setStyle("-fx-background-color: White");
+            backgroundPPPlayer1.setStyle("-fx-border-color: blue");
+            backgroundPPPlayer2.setStyle("-fx-border-color: black");
         }
         else{
             backgroundPPPlayer1.setStyle("-fx-border-color: black");
@@ -136,21 +136,19 @@ public class GridMatch{
         }
     }
     public void addXOnButton(Button button){
-        backgroundPPPlayer2.setStyle("-fx-border-color: black");
-        backgroundPPPlayer1.setStyle("-fx-border-color: Blue");
+        backgroundPPPlayer1.setStyle("-fx-border-color: black");
+        backgroundPPPlayer2.setStyle("-fx-border-color: Blue");
         button.setText("X");
-        Image croixLien = new Image("fermer-la-croix.png");
-        ImageView croix = new ImageView(croixLien);
+        ImageView croix = new ImageView(new Image("fermer-la-croix.png"));
         croix.setFitHeight(60);
         croix.setFitWidth(60);
         button.setGraphic(croix);
         button.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
     }
     public void addOOnButton(Button button){
-        backgroundPPPlayer2.setStyle("-fx-border-color: black");
         backgroundPPPlayer1.setStyle("-fx-border-color: Blue");
-        Image circleLiens = new Image("vide.png");
-        ImageView circle = new ImageView(circleLiens);
+        backgroundPPPlayer2.setStyle("-fx-border-color: Black");
+        ImageView circle = new ImageView(new Image("vide.png"));
         circle.setFitHeight(60);
         circle.setFitWidth(60);
         button.setGraphic(circle);
