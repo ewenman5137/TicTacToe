@@ -107,7 +107,7 @@ public class GridMatch{
         croixToExitPage.setFitWidth(25);
         if(party.getRoundPlayer1()){
             backgroundPPPlayer1.setStyle("-fx-border-color: Blue");
-            backgroundPPPlayer2.setStyle("-fx-border-color: black");
+            backgroundPPPlayer1.setStyle("-fx-background-color: White");
         }
         else{
             backgroundPPPlayer1.setStyle("-fx-border-color: black");
@@ -136,8 +136,8 @@ public class GridMatch{
         }
     }
     public void addXOnButton(Button button){
-        backgroundPPPlayer2.setStyle("-fx-border-color: Blue");
-        backgroundPPPlayer1.setStyle("-fx-border-color: black");
+        backgroundPPPlayer2.setStyle("-fx-border-color: black");
+        backgroundPPPlayer1.setStyle("-fx-border-color: Blue");
         button.setText("X");
         Image croixLien = new Image("fermer-la-croix.png");
         ImageView croix = new ImageView(croixLien);

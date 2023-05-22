@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e5bb6c1-3b34-4a38-a7dc-859808b628dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/accueil.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Custom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Custom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/CustomSingle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/CustomSingle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/GridMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/GridMatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Multiplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Multiplayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/SinglePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/SinglePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/Custom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/Custom.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/CustomSingle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/CustomSingle.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/GridMatch.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/GridMatch.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/Home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/Multiplayer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/Multiplayer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/Rules.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/Rules.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/SinglePlayer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/SinglePlayer.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +114,7 @@
       <workItem from="1684170226204" duration="110000" />
       <workItem from="1684170351478" duration="2662000" />
       <workItem from="1684735680622" duration="108000" />
+      <workItem from="1684735808569" duration="1307000" />
     </task>
     <servers />
   </component>
