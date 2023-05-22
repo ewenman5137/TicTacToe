@@ -4,10 +4,16 @@ public class Player {
     private String name;
     private int score;
     private boolean round;
+    private Boolean bot;
     public Player(String name,Boolean round){
         this.name =name;
         this.round=round;
+        bot=false;
         score=0;
+    }
+    public Player(String name,Boolean round,Boolean bot){
+        this(name,round);
+        this.bot =bot;
     }
 
     public String getName() {

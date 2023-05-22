@@ -28,7 +28,7 @@
          <Font size="36.0" />
       </font>
    </Button>
-   <Button fx:id="buttonHome" layoutX="600.0" layoutY="23.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" textFill="WHITE">
+   <Button fx:id="buttonHome" layoutX="600.0" layoutY="23.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #27265A;" textFill="WHITE">
       <graphic>
          <ImageView fitHeight="52.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
             <image>

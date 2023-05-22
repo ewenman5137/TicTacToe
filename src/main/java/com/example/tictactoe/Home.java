@@ -32,6 +32,14 @@ public class Home {
 
         }
         @FXML
+        void enterInSimplePlayer(ActionEvent event) throws IOException {
+            FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("SinglePlayer.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("Single player");
+            stage.setScene(scene);
+        }
+        @FXML
         void enterInMultiplayer(ActionEvent event) throws IOException {
             FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("Multiplayer.fxml"));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -49,13 +57,6 @@ public class Home {
             stage.setScene(scene);
         }
 
-        @FXML
-        void enterInSimplePlayer(ActionEvent event) throws IOException {
-            FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("SinglePlayer.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(fxmlLoader.load());
-            stage.setTitle("Single player");
-            stage.setScene(scene);
-        }
+
 
 }

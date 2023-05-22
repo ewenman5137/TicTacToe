@@ -28,13 +28,21 @@ public class SinglePlayer {
     private Button buttonLevelExpert;
 
     @FXML
+    private Button buttonStartGame; // The Button with "Start Game"
+
+    @FXML
     private Label labelPlayer1;
 
     @FXML
     private TextField textFieldNamePlayer1;
+
     private String levelOfBot="Easy";
+
     @FXML
     private Button buttonHome;
+
+    Player APlayer1 = new Player("Player 1",true);
+    Player APlayer2 = new Player("Player 2",false,true);
 
     @FXML
     void returnToHome(ActionEvent event) throws IOException {
@@ -46,8 +54,7 @@ public class SinglePlayer {
 
     }
 
-    Player APlayer1 = new Player("Player 1",true);
-    Player APlayer2 = new Player("Player 2",false);
+
     @FXML
     void createPlayer1(ActionEvent event) {
         labelPlayer1.setText(textFieldNamePlayer1.getText());
@@ -56,29 +63,7 @@ public class SinglePlayer {
 
     @FXML
     void enterInCustomMenuSingle(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("GridMatch.fxml"));
-        Parent root = loader.load();
-        Party party = new Party(APlayer1, APlayer2);
-        switch (levelOfBot){
-            case("Easy"):
-                System.out.println("Okay Jean is coming");
-                APlayer2.setName("Jean__Bot");
-                break;
-            case("Expert"):
-                System.out.println("Okay Robert is coming");
-                APlayer2.setName("Robert__Bot");
-                break;
-        }
-        GridMatch gridMatch = loader.getController();
-        gridMatch.setParty(party);
-        FXMLLoader other = new FXMLLoader(getClass().getResource("CustomSingle.fxml"));
-        Parent rot = other.load();
-        Scene scene = new Scene(rot);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("Page de Jeu");
-        stage.setWidth(700);
-        stage.setHeight(900);
-        stage.setScene(scene);
+        // Existing code
     }
 
     @FXML
@@ -93,5 +78,23 @@ public class SinglePlayer {
         buttonLevelEasy.setDisable(false);
         buttonLevelExpert.setDisable(true);
         levelOfBot="Expert";
+    }
+
+    @FXML
+    void enterInGridMatch(ActionEvent event) throws IOException {
+        APlayer2.setName(levelOfBot.equals("Expert")?"Robert":"Jean");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("GridMatch.fxml"));
+        Parent root = loader.load();
+
+        // Get the controller from the FXMLLoader
+        GridMatch gridMatch = loader.getController();
+        gridMatch.StartParty(APlayer1,APlayer2);
+
+
+        FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("GridMatch.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("GridMatch");
+        stage.setScene(scene);
     }
 }

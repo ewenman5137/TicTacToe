@@ -13,7 +13,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="700.0" style="-fx-background-color: #27265A;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe.GridMatch">
    <children>
-      <GridPane layoutX="143.0" layoutY="285.0" prefHeight="415.0" prefWidth="415.0" style="-fx-background-color: #14102F;">
+      <GridPane layoutX="143.0" layoutY="332.0" prefHeight="415.0" prefWidth="415.0" style="-fx-background-color: #14102F;">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -25,41 +25,41 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="button0" alignment="CENTER" mnemonicParsing="false" onAction="#onClick" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: FF0000;" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button fx:id="button0" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="#onClick" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: FF0000;" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <effect>
                   <InnerShadow />
                </effect></Button>
-            <Button fx:id="button1" alignment="CENTER" mnemonicParsing="false" onAction="#onClick" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: FF0000;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button fx:id="button1" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="#onClick" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: FF0000;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <effect>
                   <InnerShadow />
                </effect></Button>
-            <Button fx:id="button2" alignment="CENTER" mnemonicParsing="false" onAction="#onClick" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: FF0000;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button fx:id="button2" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="#onClick" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: FF0000;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <effect>
                   <InnerShadow />
                </effect></Button>
-            <Button fx:id="button3" alignment="CENTER" mnemonicParsing="false" onAction="#onClick" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: FF0000;" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Button fx:id="button3" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="#onClick" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: FF0000;" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <effect>
                   <InnerShadow />
                </effect></Button>
-            <Button fx:id="button5" alignment="CENTER" mnemonicParsing="false" onAction="#onClick" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: FF0000;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Button fx:id="button5" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="#onClick" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: FF0000;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <effect>
                   <InnerShadow />
                </effect>
             </Button>
-            <Button fx:id="button6" alignment="CENTER" mnemonicParsing="false" onAction="#onClick" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: FF0000;" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <Button fx:id="button6" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="#onClick" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: FF0000;" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <effect>
                   <InnerShadow />
                </effect></Button>
-            <Button fx:id="button8" alignment="CENTER" mnemonicParsing="false" onAction="#onClick" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: FF0000;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <Button fx:id="button8" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="#onClick" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: FF0000;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <effect>
                   <InnerShadow />
                </effect></Button>
-            <Button fx:id="button4" alignment="CENTER" mnemonicParsing="false" onAction="#onClick" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: FF0000;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Button fx:id="button4" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="#onClick" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: FF0000;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <effect>
                   <InnerShadow />
                </effect>
             </Button>
-            <Button fx:id="button7" alignment="CENTER" mnemonicParsing="false" onAction="#onClick" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: FF0000;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <Button fx:id="button7" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="#onClick" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: FF0000;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <effect>
                   <InnerShadow />
                </effect></Button>
@@ -85,14 +85,9 @@
          <font>
             <Font size="24.0" />
          </font></Label>
-      <Button fx:id="buttonRestart" layoutX="159.0" layoutY="709.0" mnemonicParsing="false" onAction="#restartTheGrid" prefHeight="75.0" prefWidth="400.0" style="-fx-background-radius: 15px;" text="Reset">
+      <Button fx:id="buttonRestart" layoutX="151.0" layoutY="789.0" mnemonicParsing="false" onAction="#restartTheGrid" prefHeight="75.0" prefWidth="400.0" style="-fx-background-radius: 15px;" text="Start">
          <font>
             <Font size="36.0" />
-         </font>
-      </Button>
-      <Button fx:id="buttonBackToHome" layoutX="239.0" layoutY="799.0" mnemonicParsing="false" onAction="#backToHome" prefHeight="40.0" prefWidth="240.0" style="-fx-background-radius: 15px;" text="Back to home page">
-         <font>
-            <Font size="24.0" />
          </font>
       </Button>
       <Pane fx:id="backgroundPPPlayer1" layoutX="135.0" layoutY="119.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #1F1818; -fx-background-radius: 100%; -fx-border-color: white; -fx-border-radius: 100%;">
@@ -113,7 +108,7 @@
             </ImageView>
          </children>
       </Pane>
-      <Button fx:id="buttonHome" layoutX="600.0" layoutY="23.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" textFill="WHITE">
+      <Button fx:id="buttonHome" layoutX="600.0" layoutY="23.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #27265A;" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="52.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -122,5 +117,10 @@
             </ImageView>
          </graphic>
       </Button>
+      <Label fx:id="roundAndEndMatch" alignment="CENTER" layoutX="181.0" layoutY="278.0" prefHeight="27.0" prefWidth="341.0" text="Welcome on the ring" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

@@ -43,7 +43,7 @@
             </ImageView>
          </children>
       </Pane>
-      <Button fx:id="buttonGoToGrid" layoutX="151.0" layoutY="647.0" mnemonicParsing="false" onAction="#goToTheMatch" prefHeight="75.0" prefWidth="400.0" style="-fx-background-radius: 15px;" text="Start Game">
+      <Button fx:id="buttonGoToGrid" layoutX="151.0" layoutY="647.0" mnemonicParsing="false" onAction="#goToTheMatch" prefHeight="75.0" prefWidth="400.0" style="-fx-background-radius: 15px;" text="Back">
          <font>
             <Font size="36.0" />
          </font>
@@ -52,7 +52,7 @@
          <children>
             <ImageView fx:id="symbolPlayer1" fitHeight="105.0" fitWidth="105.0" layoutX="23.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@fermer-la-croix.png" />
+                  <Image url="@../../../fermer-la-croix.png" />
                </image>
             </ImageView>
          </children>

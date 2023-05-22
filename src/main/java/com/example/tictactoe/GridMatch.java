@@ -76,13 +76,13 @@ public class GridMatch{
 
     @FXML
     private Label scorePlayer2;
+
+    @FXML
+    private Label roundAndEndMatch;
     private int x=0;
     Image croixToExitPageLiens = new Image("fermer-la-croix.png");
     ImageView croixToExitPage = new ImageView(croixToExitPageLiens);
     private static Party party;
-
-    @FXML
-    private Button buttonHome;
 
     @FXML
     void returnToHome(ActionEvent event) throws IOException {
@@ -108,10 +108,12 @@ public class GridMatch{
         if(party.getRoundPlayer1()){
             backgroundPPPlayer1.setStyle("-fx-border-color: blue");
             backgroundPPPlayer2.setStyle("-fx-border-color: black");
+            //roundAndEndMatch.setText("it's the turn of "+party.getNamePlayer1());
         }
         else{
             backgroundPPPlayer1.setStyle("-fx-border-color: black");
             backgroundPPPlayer2.setStyle("-fx-border-color: Blue");
+            //roundAndEndMatch.setText("it's the turn of "+party.getNamePlayer2());
         }
     }
 
@@ -120,19 +122,26 @@ public class GridMatch{
         Button clickedButton = (Button) event.getSource();
         if (clickedButton.getText().equals("")) {
             System.out.println(party.getRoundPlayer1());
-            if (party.getRoundPlayer1()) {
-                System.out.println("je place un X");
-                addXOnButton(clickedButton);
+            if(x<=9){
+                if (party.getRoundPlayer1()) {
+                    System.out.println("je place un X");
+                    addXOnButton(clickedButton);
+                }
+                else {
+                    addOOnButton(clickedButton);
+                }
+                verifieEtatGrille();
+                x++;
+                party.tour();
             }
-            else {
-                addOOnButton(clickedButton);
+            else{
+                if(verifieEtatGrille()!=1){
+                    partyNull();
+                    party.tour();
+                }
             }
-            verifieEtatGrille();
-            x++;
-            party.tour();
-            if(x>=9){
-                partyNull();
-            }
+
+
         }
     }
     public void addXOnButton(Button button){
@@ -144,6 +153,7 @@ public class GridMatch{
         croix.setFitWidth(60);
         button.setGraphic(croix);
         button.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+        roundAndEndMatch.setText("it's the turn of "+party.getNamePlayer1());
     }
     public void addOOnButton(Button button){
         backgroundPPPlayer1.setStyle("-fx-border-color: Blue");
@@ -154,6 +164,7 @@ public class GridMatch{
         button.setGraphic(circle);
         button.setText("O");
         button.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+        roundAndEndMatch.setText("it's the turn of "+party.getNamePlayer2());
     }
 
     public void partyNull(){
@@ -163,6 +174,7 @@ public class GridMatch{
                 listNameButton[i].setDisable(true);
             }
         }
+        roundAndEndMatch.setText("it's a match null");
     }
         public void endOfMatch(String whoIsWin, Button bouton_1, Button bouton_2, Button bouton_3){
             System.out.println("Le bouton qui a gagner est : "+whoIsWin);
@@ -179,6 +191,7 @@ public class GridMatch{
                                 listNameButton[i].setDisable(true);
                             }
                         }
+                        roundAndEndMatch.setText("Felicitation "+party.getNamePlayer1());
                         break;
                     case "O":
                         party.player2Win();
@@ -188,6 +201,7 @@ public class GridMatch{
                                 listNameButton[i].setDisable(true);
                             }
                         }
+                        roundAndEndMatch.setText("Felicitation "+party.getNamePlayer2());
                         break;
                     default:
                         break;
@@ -195,7 +209,7 @@ public class GridMatch{
 
             }
 
-    private void verifieEtatGrille() {
+    private int verifieEtatGrille() {
         int[][] winConditions = new int[][] {
                 {0, 1, 2}, {3, 4, 5}, {6, 7, 8}, // lignes
                 {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, // colonnes
@@ -204,32 +218,12 @@ public class GridMatch{
         Button[] listNameButton = {button0, button1, button2, button3, button4, button5, button6, button7, button8};
         for (int i=0;i<winConditions.length;i++) {
             if (listNameButton[winConditions[i][0]].getText().equals(listNameButton[winConditions[i][1]].getText()) && listNameButton[winConditions[i][0]].getText().equals(listNameButton[winConditions[i][2]].getText()) && !listNameButton[winConditions[i][2]].getText().equals("")) {
-                System.out.println("Bouton 1 "+listNameButton[winConditions[i][0]].getText()+" Bouton 2 "+listNameButton[winConditions[i][1]].getText()+" Bouton 3 "+listNameButton[winConditions[i][2]].getText());
+                //System.out.println("Bouton 1 "+listNameButton[winConditions[i][0]].getText()+" Bouton 2 "+listNameButton[winConditions[i][1]].getText()+" Bouton 3 "+listNameButton[winConditions[i][2]].getText());
                 endOfMatch(listNameButton[winConditions[i][0]].getText(), listNameButton[winConditions[i][0]], listNameButton[winConditions[i][1]], listNameButton[winConditions[i][2]]);
+                return 1;
             }
         }
-    }
-
-    //=============================
-
-
-
-    @FXML
-    void backToHome(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("Home.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Home");
-        stage.setScene(scene);
-    }
-
-    @FXML
-    void exitTheMatch(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("Multiplayer.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Multiplayer");
-        stage.setScene(scene);
+        return 0;
     }
 
     @FXML
@@ -244,6 +238,7 @@ public class GridMatch{
             listNameButton[i].setStyle("-fx-background-color: red");
         }
         setParty(party);
+        buttonRestart.setText("Reset");
     }
 
 }
