@@ -9,21 +9,11 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="700.0" style="-fx-background-color: #27265A;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe.Rules">
    <children>
-      <Label layoutX="272.0" layoutY="37.0" style="text: #F3EBEB;" text="TicTacToe" textFill="#f3ebeb">
+      <Label layoutX="272.0" layoutY="35.0" style="text: #F3EBEB;" text="TicTacToe" textFill="#f3ebeb">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="41.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@engrenage.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="618.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@CroixRouge.png" />
-         </image>
-      </ImageView>
       <Label layoutX="50.0" layoutY="175.0" prefHeight="50.0" prefWidth="478.0" text="1. Tic Tac Toe is played on a 3x3 square grid. " textFill="WHITE">
          <font>
             <Font size="24.0" />
@@ -59,10 +49,14 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="buttonBackToHome" layoutX="170.0" layoutY="651.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="75.0" prefWidth="400.0" style="-fx-background-radius: 15px;" text="Back To home">
-         <font>
-            <Font size="36.0" />
-         </font>
+      <Button fx:id="buttonHome" layoutX="600.0" layoutY="23.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../java/com/example/tictactoe/accueil.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </children>
 </Pane>

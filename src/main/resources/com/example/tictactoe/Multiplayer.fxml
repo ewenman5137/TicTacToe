@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="800.0" prefWidth="700.0" style="-fx-background-color: #27265A;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe.Multiplayer">
    <children>
-      <Label layoutX="270.0" layoutY="32.0" text="TicTacToe" textFill="#f3ebeb">
+      <Label layoutX="272.0" layoutY="35.0" text="TicTacToe" textFill="#f3ebeb">
          <font>
             <Font size="36.0" />
          </font></Label>
@@ -43,16 +43,6 @@
             <Font size="36.0" />
          </font>
       </Button>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="51.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@engrenage.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="628.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@CroixRouge.png" />
-         </image>
-      </ImageView>
       <Label layoutX="31.0" layoutY="159.0" text="Name :" textFill="WHITE">
          <font>
             <Font size="20.0" />
@@ -87,6 +77,15 @@
          <font>
             <Font size="18.0" />
          </font>
+      </Button>
+      <Button fx:id="buttonHome" layoutX="600.0" layoutY="23.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../java/com/example/tictactoe/accueil.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </children>
 </AnchorPane>

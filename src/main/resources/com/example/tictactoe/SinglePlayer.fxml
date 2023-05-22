@@ -8,24 +8,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="800.0" prefWidth="700.0" style="-fx-background-color: #27265A;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe.SinglePlayer">
    <children>
-      <Label layoutX="280.0" layoutY="42.0" text="TicTacToe" textFill="#f3ebeb">
+      <Label layoutX="272.0" layoutY="35.0" text="TicTacToe" textFill="#f3ebeb">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="61.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@engrenage.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="638.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@CroixRouge.png" />
-         </image>
-      </ImageView>
       <Label fx:id="labelPlayer1" layoutX="111.0" layoutY="225.0" prefHeight="30.0" prefWidth="106.0" text="Player 1" textFill="WHITE">
          <font>
             <Font size="20.0" />
@@ -51,9 +40,9 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <Button fx:id="buttonEnterInSingleMenuCustom" layoutX="160.0" layoutY="641.0" mnemonicParsing="false" onAction="#enterInCustomMenuSingle" prefHeight="75.0" prefWidth="400.0" style="-fx-background-radius: 15px;" text="Select your caracter">
+      <Button fx:id="buttonEnterInSingleMenuCustom" layoutX="234.0" layoutY="609.0" mnemonicParsing="false" onAction="#enterInCustomMenuSingle" prefHeight="40.0" prefWidth="250.0" style="-fx-background-radius: 15px;" text="Select your caracter">
          <font>
-            <Font size="36.0" />
+            <Font size="24.0" />
          </font>
       </Button>
       <Button fx:id="buttonLevelEasy" layoutX="236.0" layoutY="428.0" mnemonicParsing="false" onAction="#levelEasy" prefHeight="40.0" prefWidth="250.0" style="-fx-background-radius: 15px;" text="Easy">
@@ -64,6 +53,20 @@
       <Button fx:id="buttonLevelExpert" layoutX="235.0" layoutY="488.0" mnemonicParsing="false" onAction="#levelExpert" prefHeight="40.0" prefWidth="250.0" style="-fx-background-radius: 15px;" text="Expert">
          <font>
             <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonHome" layoutX="600.0" layoutY="23.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../java/com/example/tictactoe/accueil.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="buttonStartGame" layoutX="160.0" layoutY="678.0" mnemonicParsing="false" onAction="#enterInGridMatch" prefHeight="75.0" prefWidth="400.0" style="-fx-background-radius: 15px;" text="Start game">
+         <font>
+            <Font size="36.0" />
          </font>
       </Button>
    </children>

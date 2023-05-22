@@ -65,7 +65,7 @@
                </effect></Button>
          </children>
       </GridPane>
-      <Label layoutX="281.0" layoutY="31.0" text="TicTacToe" textFill="WHITE">
+      <Label layoutX="272.0" layoutY="35.0" text="TicTacToe" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font></Label>
@@ -85,19 +85,6 @@
          <font>
             <Font size="24.0" />
          </font></Label>
-      <Button fx:id="boutonQuitter" layoutX="635.0" layoutY="41.0" mnemonicParsing="false" onAction="#exitTheMatch" prefHeight="25.0" prefWidth="25.0">
-         <graphic>
-            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@CroixRouge.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="51.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@engrenage.png" />
-         </image>
-      </ImageView>
       <Button fx:id="buttonRestart" layoutX="159.0" layoutY="709.0" mnemonicParsing="false" onAction="#restartTheGrid" prefHeight="75.0" prefWidth="400.0" style="-fx-background-radius: 15px;" text="Reset">
          <font>
             <Font size="36.0" />
@@ -126,5 +113,14 @@
             </ImageView>
          </children>
       </Pane>
+      <Button fx:id="buttonHome" layoutX="600.0" layoutY="23.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../java/com/example/tictactoe/accueil.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </Pane>

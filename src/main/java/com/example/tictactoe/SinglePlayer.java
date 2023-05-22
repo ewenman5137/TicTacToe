@@ -32,11 +32,22 @@ public class SinglePlayer {
 
     @FXML
     private TextField textFieldNamePlayer1;
+    private String levelOfBot="Easy";
+    @FXML
+    private Button buttonHome;
+
+    @FXML
+    void returnToHome(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("Home.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Home");
+        stage.setScene(scene);
+
+    }
 
     Player APlayer1 = new Player("Player 1",true);
     Player APlayer2 = new Player("Player 2",false);
-    //Bot ABot = new Bot("Jean",false);
-    String levelOfBot="Easy";
     @FXML
     void createPlayer1(ActionEvent event) {
         labelPlayer1.setText(textFieldNamePlayer1.getText());
@@ -45,7 +56,7 @@ public class SinglePlayer {
 
     @FXML
     void enterInCustomMenuSingle(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("CustomSingle.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("GridMatch.fxml"));
         Parent root = loader.load();
         Party party = new Party(APlayer1, APlayer2);
         switch (levelOfBot){
@@ -60,7 +71,9 @@ public class SinglePlayer {
         }
         GridMatch gridMatch = loader.getController();
         gridMatch.setParty(party);
-        Scene scene = new Scene(root);
+        FXMLLoader other = new FXMLLoader(getClass().getResource("CustomSingle.fxml"));
+        Parent rot = other.load();
+        Scene scene = new Scene(rot);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Page de Jeu");
         stage.setWidth(700);

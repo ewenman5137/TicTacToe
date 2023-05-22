@@ -7,39 +7,34 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0"
-      prefWidth="700.0" style="-fx-background-color: #27265A;" xmlns="http://javafx.com/javafx/19"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe.Home">
-   <Label layoutX="272.0" layoutY="37.0" style="text: #F3EBEB;" text="TicTacToe" textFill="#f3ebeb">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="700.0" style="-fx-background-color: #27265A;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tictactoe.Home">
+   <Label layoutX="272.0" layoutY="35.0" style="text: #F3EBEB;" text="TicTacToe" textFill="#f3ebeb">
       <font>
-         <Font size="36.0"/>
+         <Font size="36.0" />
       </font>
    </Label>
-   <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="41.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="@engrenage.png"/>
-   </ImageView>
-   <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="618.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="@CroixRouge.png"/>
-   </ImageView>
-   <Button fx:id="buttonMultiplayer" layoutX="150.0" layoutY="478.0" mnemonicParsing="false"
-           onAction="#enterInMultiplayer" prefHeight="75.0" prefWidth="400.0" style="-fx-background-radius: 15px;"
-           text="Multiplayer">
+   <Button fx:id="buttonMultiplayer" layoutX="150.0" layoutY="478.0" mnemonicParsing="false" onAction="#enterInMultiplayer" prefHeight="75.0" prefWidth="400.0" style="-fx-background-radius: 15px;" text="Multiplayer">
       <font>
-         <Font size="36.0"/>
+         <Font size="36.0" />
       </font>
    </Button>
-   <Button fx:id="buttonRules" layoutX="150.0" layoutY="576.0" mnemonicParsing="false" onAction="#enterInRules"
-           prefHeight="75.0" prefWidth="400.0" style="-fx-background-radius: 15px;" text="Rules">
+   <Button fx:id="buttonRules" layoutX="150.0" layoutY="576.0" mnemonicParsing="false" onAction="#enterInRules" prefHeight="75.0" prefWidth="400.0" style="-fx-background-radius: 15px;" text="Rules">
       <font>
-         <Font size="36.0"/>
+         <Font size="36.0" />
       </font>
    </Button>
-   <Button fx:id="buttonSimplePlayer" layoutX="150.0" layoutY="381.0" mnemonicParsing="false"
-           onAction="#enterInSimplePlayer" prefHeight="75.0" prefWidth="400.0" style="-fx-background-radius: 15px;"
-           text="Simple player">
+   <Button fx:id="buttonSimplePlayer" layoutX="150.0" layoutY="381.0" mnemonicParsing="false" onAction="#enterInSimplePlayer" prefHeight="75.0" prefWidth="400.0" style="-fx-background-radius: 15px;" text="Simple player">
       <font>
-         <Font size="36.0"/>
+         <Font size="36.0" />
       </font>
+   </Button>
+   <Button fx:id="buttonHome" layoutX="600.0" layoutY="23.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" textFill="WHITE">
+      <graphic>
+         <ImageView fitHeight="52.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../../java/com/example/tictactoe/accueil.png" />
+            </image>
+         </ImageView>
+      </graphic>
    </Button>
 </Pane>

@@ -81,6 +81,19 @@ public class GridMatch{
     ImageView croixToExitPage = new ImageView(croixToExitPageLiens);
     private static Party party;
 
+    @FXML
+    private Button buttonHome;
+
+    @FXML
+    void returnToHome(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("Home.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Home");
+        stage.setScene(scene);
+
+    }
+
     public void StartParty(Player player1, Player player2){
         party =new Party(player1,player2);
         setParty(party);

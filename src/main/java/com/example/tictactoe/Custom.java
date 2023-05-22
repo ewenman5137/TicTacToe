@@ -64,6 +64,8 @@ private Pane backgroundPPPlayer1;
     @FXML
     private ImageView symbolPlayer2;
 
+
+
     @FXML
     void leftPPPlayer1(ActionEvent event) {
 

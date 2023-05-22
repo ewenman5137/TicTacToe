@@ -43,7 +43,6 @@ public class CustomSingle {
 
     @FXML
     private ImageView symbolPlayer1;
-
     @FXML
     void goToTheMatch(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("GridMatch.fxml"));

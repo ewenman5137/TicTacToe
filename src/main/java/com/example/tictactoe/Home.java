@@ -19,7 +19,18 @@ public class Home {
 
         @FXML
         private Button buttonSimplePlayer;
+        @FXML
+        private Button buttonHome;
 
+        @FXML
+        void returnToHome(ActionEvent event) throws IOException {
+            FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("Home.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("Home");
+            stage.setScene(scene);
+
+        }
         @FXML
         void enterInMultiplayer(ActionEvent event) throws IOException {
             FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("Multiplayer.fxml"));
