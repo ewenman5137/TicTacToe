@@ -105,6 +105,8 @@ public class GridMatch{
         scorePlayer2.setText(""+ party.getScorePlayer2());
         croixToExitPage.setFitHeight(25);
         croixToExitPage.setFitWidth(25);
+        ppPlayer1.setImage(new Image(party.getPlayer1().getImage()));
+        ppPlayer2.setImage(new Image(party.getPlayer2().getImage()));
         if(party.getRoundPlayer1()){
             backgroundPPPlayer1.setStyle("-fx-border-color: blue");
             backgroundPPPlayer2.setStyle("-fx-border-color: black");
@@ -180,7 +182,7 @@ public void moveOfBot(){
         backgroundPPPlayer1.setStyle("-fx-border-color: black");
         backgroundPPPlayer2.setStyle("-fx-border-color: Blue");
         button.setText("X");
-        ImageView croix = new ImageView(new Image("fermer-la-croix.png"));
+        ImageView croix = new ImageView(new Image(party.getPlayer1().getSigne()));
         croix.setFitHeight(60);
         croix.setFitWidth(60);
         button.setGraphic(croix);
@@ -191,7 +193,7 @@ public void moveOfBot(){
     public void addOOnButton(Button button){
         backgroundPPPlayer1.setStyle("-fx-border-color: Blue");
         backgroundPPPlayer2.setStyle("-fx-border-color: Black");
-        ImageView circle = new ImageView(new Image("vide.png"));
+        ImageView circle = new ImageView(new Image(party.getPlayer2().getSigne()));
         circle.setFitHeight(60);
         circle.setFitWidth(60);
         button.setGraphic(circle);

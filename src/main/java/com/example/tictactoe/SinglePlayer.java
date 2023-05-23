@@ -42,9 +42,13 @@ public class SinglePlayer {
     @FXML
     private Button buttonHome;
 
-    Player APlayer1 = new Player("Player 1",true);
-    Player APlayer2 = new Player("Player 2",false,true);
+    Player APlayer1 = new Player("Player 1",true,"fermer-la-croix.png");
+    Player APlayer2 = new Player("Player 2",false,"vide.png",true);
 
+    public void changeImagePlayer(String imagePlayer1, String imagePlayer2){
+        APlayer1.setImage(imagePlayer1);
+        APlayer2.setImage(imagePlayer2);
+    }
     @FXML
     void returnToHome(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("Home.fxml"));
@@ -93,6 +97,8 @@ public class SinglePlayer {
 
     @FXML
     void enterInGridMatch(ActionEvent event) throws IOException {
+        APlayer1.setImage(CustomSingle.getImage());
+        APlayer1.setSigne(CustomSingle.getSigne());
         APlayer2.setName(levelOfBot.equals("Expert")?"Robert":"Jean");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("GridMatch.fxml"));
         Parent root = loader.load();

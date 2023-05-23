@@ -5,16 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e5bb6c1-3b34-4a38-a7dc-859808b628dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Custom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Custom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/CustomSingle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/CustomSingle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/baleine.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/image/baleine.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/image/bird.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/image/bird.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/image/grenouille.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/image/grenouille.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/image/lelephant.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/image/lelephant.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/image/perroquet.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/image/perroquet.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/image/singe.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/image/singe.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/image/tortue.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/image/tortue.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/GridMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/GridMatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Multiplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Multiplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Party.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Party.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/SinglePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/SinglePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/baleine.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/bird.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/grenouille.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/lelephant.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/perroquet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/singe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/image/tortue.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,6 +140,7 @@
       <workItem from="1684827352770" duration="2761000" />
       <workItem from="1684833145438" duration="3296000" />
       <workItem from="1684874656414" duration="293000" />
+      <workItem from="1684874978695" duration="3417000" />
     </task>
     <servers />
   </component>

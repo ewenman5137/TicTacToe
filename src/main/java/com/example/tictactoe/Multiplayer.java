@@ -17,9 +17,9 @@ import java.io.IOException;
 import java.util.Random;
 
 public class Multiplayer {
-    Player APlayer1 = new Player("Player 1",true);
+    Player APlayer1 = new Player("Player 1",true,"fermer-la-croix.png");
 
-    Player APlayer2 = new Player("Player 2",false);
+    Player APlayer2 = new Player("Player 2",false,"vide.png");
     String whoStart="Random";
     @FXML
     private Button buttonStartGame;
@@ -158,6 +158,10 @@ public class Multiplayer {
 
         // Get the controller from the FXMLLoader
         GridMatch gridMatch = loader.getController();
+        APlayer1.setImage(Custom.getImagePPPlayer1());
+        APlayer2.setImage(Custom.getImagePPPlayer2());
+        APlayer1.setSigne(Custom.getSignePlayer1());
+        APlayer2.setSigne(Custom.getSignePlayer2());
         gridMatch.StartParty(APlayer1,APlayer2);
 
 

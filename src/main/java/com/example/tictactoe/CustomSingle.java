@@ -44,35 +44,66 @@ public class CustomSingle {
 
     @FXML
     private ImageView symbolPlayer1;
-    @FXML
-    void goToTheMatch(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("Multi.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.close();
-    }
 
-    String[] listNameImagePP={"/image/baleine.png","grenouille.png","lelephant.png","bird.png","perroquet.png","singe.png","tortue.png"};
-    int x=0;
+
+    static String[] listNameImagePP={"baleine.png","grenouille.png","lelephant.png","bird.png","perroquet.png","singe.png","tortue.png"};
+    static String[] listNameImageSigne={"baleine.png","grenouille.png","lelephant.png","bird.png","perroquet.png","singe.png","tortue.png"};
+    static int x=0;
+    static int y=0;
+
+    @FXML
+    void rightPPPlayer1(ActionEvent event) {
+        if(x==listNameImagePP.length-1){
+            x = 0;
+        }else{
+            x++;
+        }
+        System.out.println(x);
+        ppPlayer1.setImage(new Image(listNameImagePP[x]));
+    }
     @FXML
     void leftPPPlayer1(ActionEvent event) {
-        ppPlayer1.setImage(new Image("/baleine.png"));
-        System.out.println("hello");
-        x++;
+        if(x==0){
+            x = listNameImagePP.length-1;
+        }else{
+            x--;
+        }
+        ppPlayer1.setImage(new Image(listNameImagePP[x]));
+        System.out.println(x);
     }
 
 
     @FXML
     void leftSymbolPlayer1(ActionEvent event) {
-
+        if(y==0){
+            y = listNameImageSigne.length-1;
+        }else{
+            y--;
+        }
+        symbolPlayer1.setImage(new Image(listNameImageSigne[y]));
     }
 
-    @FXML
-    void rightPPPlayer1(ActionEvent event) {
 
-    }
 
     @FXML
     void rightSymbolPlayer1(ActionEvent event) {
-
+        if(y==listNameImageSigne.length-1){
+            y = 0;
+        }else{
+            y++;
+        }
+        symbolPlayer1.setImage(new Image(listNameImageSigne[y]));
+    }
+    public static String getImage(){
+        return listNameImagePP[x];
+    }
+    public static String getSigne(){
+        return listNameImageSigne[y];
+    }
+    @FXML
+    void goToTheMatch(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("Multi.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
     }
 }

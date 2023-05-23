@@ -5,19 +5,41 @@ public class Player {
     private int score;
     private boolean round;
     private Boolean bot;
-    public Player(String name,Boolean round){
+    private String image;
+    private String signe;
+    public Player(String name,Boolean round,String signe){
         this.name =name;
         this.round=round;
+        this.signe=signe;
         bot=false;
+        image="baleine.png";
         score=0;
     }
-    public Player(String name,Boolean round,Boolean bot){
-        this(name,round);
+    public Player(String name,Boolean round,String signe,Boolean bot){
+        this(name,round,signe);
         this.bot =bot;
     }
-
+    public Player(String name,Boolean round,String signe,String image){
+        this(name,round,signe);
+        this.image =image;
+    }
     public String getName() {
         return name;
+    }
+    public String getImage(){
+            return image;
+    }
+
+    public String getSigne() {
+        return signe;
+    }
+
+    public void setSigne(String signe) {
+        this.signe = signe;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public Boolean getBot() {

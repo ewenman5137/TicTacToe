@@ -28,6 +28,14 @@ public class Party{
     public boolean getBot(){
             return player2.getBot();
     }
+
+    public Player getPlayer1() {
+        return player1;
+    }
+    public Player getPlayer2() {
+        return player2;
+    }
+
     public boolean getRoundPlayer1() {
         Boolean round =player1.getRound();
         return player1.getRound();
