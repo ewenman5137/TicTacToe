@@ -25,7 +25,9 @@ public class Party{
     public void setRoundPlayer2(Boolean round){
         player2.setRound(round);
     }
-
+    public boolean getBot(){
+            return player2.getBot();
+    }
     public boolean getRoundPlayer1() {
         Boolean round =player1.getRound();
         return player1.getRound();

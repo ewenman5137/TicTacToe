@@ -108,12 +108,12 @@ public class GridMatch{
         if(party.getRoundPlayer1()){
             backgroundPPPlayer1.setStyle("-fx-border-color: blue");
             backgroundPPPlayer2.setStyle("-fx-border-color: black");
-            //roundAndEndMatch.setText("it's the turn of "+party.getNamePlayer1());
+            roundAndEndMatch.setText("it's the turn of "+party.getNamePlayer1());
         }
         else{
             backgroundPPPlayer1.setStyle("-fx-border-color: black");
             backgroundPPPlayer2.setStyle("-fx-border-color: Blue");
-            //roundAndEndMatch.setText("it's the turn of "+party.getNamePlayer2());
+            roundAndEndMatch.setText("it's the turn of "+party.getNamePlayer2());
         }
     }
 
@@ -124,25 +124,48 @@ public class GridMatch{
             System.out.println(party.getRoundPlayer1());
             if(x<=9){
                 if (party.getRoundPlayer1()) {
-                    System.out.println("je place un X");
                     addXOnButton(clickedButton);
-                }
-                else {
+                    if(party.getBot()){
+                        moveOfBot();
+                    }
+                }else{
                     addOOnButton(clickedButton);
                 }
-                verifieEtatGrille();
                 x++;
-                party.tour();
             }
             else{
                 if(verifieEtatGrille()!=1){
                     partyNull();
-                    party.tour();
                 }
             }
 
 
         }
+    }
+public void moveOfBot(){
+        if(party.getRoundPlayer2()){
+            if(party.getNamePlayer2().equals("Jean")){
+                moveOfEasy();
+            }else{
+                moveOfExpert();
+            }
+        }
+}
+    public void moveOfEasy(){
+        if(party.getRoundPlayer2()){
+            Button[] listNameButton = {button0, button1, button2, button3, button4, button5, button6, button7, button8};
+            for (int i = 0; i < 9; i++) {
+                if(listNameButton[i].getText()==""){
+                    System.out.println(listNameButton[i]);
+                    addOOnButton(listNameButton[i]);
+                    break;
+                }
+            }
+        }
+
+    }
+    public void moveOfExpert(){
+
     }
     public void addXOnButton(Button button){
         backgroundPPPlayer1.setStyle("-fx-border-color: black");
@@ -154,6 +177,8 @@ public class GridMatch{
         button.setGraphic(croix);
         button.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
         roundAndEndMatch.setText("it's the turn of "+party.getNamePlayer1());
+        verifieEtatGrille();
+        party.tour();
     }
     public void addOOnButton(Button button){
         backgroundPPPlayer1.setStyle("-fx-border-color: Blue");
@@ -165,6 +190,8 @@ public class GridMatch{
         button.setText("O");
         button.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
         roundAndEndMatch.setText("it's the turn of "+party.getNamePlayer2());
+        verifieEtatGrille();
+        party.tour();
     }
 
     public void partyNull(){
@@ -177,7 +204,6 @@ public class GridMatch{
         roundAndEndMatch.setText("it's a match null");
     }
         public void endOfMatch(String whoIsWin, Button bouton_1, Button bouton_2, Button bouton_3){
-            System.out.println("Le bouton qui a gagner est : "+whoIsWin);
             Button[] listNameButton = {button0, button1, button2, button3, button4, button5, button6, button7, button8};
                 bouton_1.setStyle("-fx-background-color: green;");
                 bouton_2.setStyle("-fx-background-color: green;");
@@ -239,6 +265,7 @@ public class GridMatch{
         }
         setParty(party);
         buttonRestart.setText("Reset");
+        moveOfBot();
     }
 
 }

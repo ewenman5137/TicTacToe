@@ -20,6 +20,10 @@ public class Player {
         return name;
     }
 
+    public Boolean getBot() {
+        return bot;
+    }
+
     public int getScore() {
         return score;
     }
