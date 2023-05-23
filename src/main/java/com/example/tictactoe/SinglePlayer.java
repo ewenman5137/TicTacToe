@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -63,7 +64,17 @@ public class SinglePlayer {
 
     @FXML
     void enterInCustomMenuSingle(ActionEvent event) throws IOException {
-        // Existing code
+        FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("CustomSingle.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL); // rendre la fenêtre modale
+        stage.setTitle("Menu Custom Single");
+        stage.setWidth(700);
+        stage.setHeight(900);
+        stage.setScene(scene);
+        stage.showAndWait(); // affiche cette fenêtre et attend qu'elle soit fermée
     }
 
     @FXML

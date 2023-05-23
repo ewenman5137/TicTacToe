@@ -45,11 +45,9 @@ public class CustomSingle {
     private ImageView symbolPlayer1;
     @FXML
     void goToTheMatch(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("GridMatch.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Home.class.getResource("Multi.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Match");
-        stage.setScene(scene);
+        stage.close();
     }
 
     @FXML

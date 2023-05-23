@@ -125,16 +125,25 @@ public class GridMatch{
             if(x<=9){
                 if (party.getRoundPlayer1()) {
                     addXOnButton(clickedButton);
-                    if(party.getBot()){
+                    if(verifieEtatGrille()){
+                        giveButtonWin();
+                    }
+                    if(party.getBot()&&!verifieEtatGrille()){
                         moveOfBot();
+                        if(verifieEtatGrille()){
+                            giveButtonWin();
+                        }
                     }
                 }else{
                     addOOnButton(clickedButton);
+                    if(verifieEtatGrille()){
+                        giveButtonWin();
+                    }
                 }
                 x++;
             }
             else{
-                if(verifieEtatGrille()!=1){
+                if(verifieEtatGrille()){
                     partyNull();
                 }
             }
@@ -177,7 +186,6 @@ public void moveOfBot(){
         button.setGraphic(croix);
         button.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
         roundAndEndMatch.setText("it's the turn of "+party.getNamePlayer1());
-        verifieEtatGrille();
         party.tour();
     }
     public void addOOnButton(Button button){
@@ -190,7 +198,6 @@ public void moveOfBot(){
         button.setText("O");
         button.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
         roundAndEndMatch.setText("it's the turn of "+party.getNamePlayer2());
-        verifieEtatGrille();
         party.tour();
     }
 
@@ -235,7 +242,7 @@ public void moveOfBot(){
 
             }
 
-    private int verifieEtatGrille() {
+    private boolean verifieEtatGrille() {
         int[][] winConditions = new int[][] {
                 {0, 1, 2}, {3, 4, 5}, {6, 7, 8}, // lignes
                 {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, // colonnes
@@ -244,12 +251,25 @@ public void moveOfBot(){
         Button[] listNameButton = {button0, button1, button2, button3, button4, button5, button6, button7, button8};
         for (int i=0;i<winConditions.length;i++) {
             if (listNameButton[winConditions[i][0]].getText().equals(listNameButton[winConditions[i][1]].getText()) && listNameButton[winConditions[i][0]].getText().equals(listNameButton[winConditions[i][2]].getText()) && !listNameButton[winConditions[i][2]].getText().equals("")) {
-                //System.out.println("Bouton 1 "+listNameButton[winConditions[i][0]].getText()+" Bouton 2 "+listNameButton[winConditions[i][1]].getText()+" Bouton 3 "+listNameButton[winConditions[i][2]].getText());
-                endOfMatch(listNameButton[winConditions[i][0]].getText(), listNameButton[winConditions[i][0]], listNameButton[winConditions[i][1]], listNameButton[winConditions[i][2]]);
-                return 1;
+                return true;
             }
         }
-        return 0;
+        return false;
+    }
+
+    private boolean giveButtonWin() {
+        int[][] winConditions = new int[][] {
+                {0, 1, 2}, {3, 4, 5}, {6, 7, 8}, // lignes
+                {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, // colonnes
+                {0, 4, 8}, {2, 4, 6}              // diagonales
+        };
+        Button[] listNameButton = {button0, button1, button2, button3, button4, button5, button6, button7, button8};
+        for (int i=0;i<winConditions.length;i++) {
+            if (listNameButton[winConditions[i][0]].getText().equals(listNameButton[winConditions[i][1]].getText()) && listNameButton[winConditions[i][0]].getText().equals(listNameButton[winConditions[i][2]].getText()) && !listNameButton[winConditions[i][2]].getText().equals("")) {
+                endOfMatch(listNameButton[winConditions[i][0]].getText(), listNameButton[winConditions[i][0]], listNameButton[winConditions[i][1]], listNameButton[winConditions[i][2]]);
+            }
+        }
+        return false;
     }
 
     @FXML
