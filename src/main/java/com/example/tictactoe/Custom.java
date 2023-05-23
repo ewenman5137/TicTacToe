@@ -66,11 +66,11 @@ private Pane backgroundPPPlayer1;
     private ImageView symbolPlayer2;
 
     static String[] listNameImagePP={"baleine.png","grenouille.png","lelephant.png","bird.png","perroquet.png","singe.png","tortue.png"};
-    static String[] listNameImageSigne={"baleine.png","grenouille.png","lelephant.png","bird.png","perroquet.png","singe.png","tortue.png"};
+    static String[] listNameImageSigne={"fermer-la-croix.png","vide.png","baleine.png","grenouille.png","lelephant.png","bird.png","perroquet.png","singe.png","tortue.png"};
     static int indexPlayer1PP=0;
     static int indexPlayer2PP=0;
     static int indexPlayer1Signe=0;
-    static int indexPlayer2Signe=0;
+    static int indexPlayer2Signe=1;
 
     @FXML
     void leftPPPlayer1(ActionEvent event) {
@@ -95,21 +95,21 @@ private Pane backgroundPPPlayer1;
     @FXML
     void leftSymbolPlayer1(ActionEvent event) {
         if(indexPlayer1Signe==0){
-            indexPlayer1Signe = listNameImagePP.length-1;
+            indexPlayer1Signe = listNameImageSigne.length-1;
         }else{
             indexPlayer1Signe--;
         }
-        symbolPlayer1.setImage(new Image(listNameImagePP[indexPlayer1Signe]));
+        symbolPlayer1.setImage(new Image(listNameImageSigne[indexPlayer1Signe]));
     }
 
     @FXML
     void leftSymbolPlayer2(ActionEvent event) {
         if(indexPlayer2Signe==0){
-            indexPlayer2Signe = listNameImagePP.length-1;
+            indexPlayer2Signe = listNameImageSigne.length-1;
         }else{
             indexPlayer2Signe--;
         }
-        symbolPlayer2.setImage(new Image(listNameImagePP[indexPlayer2Signe]));
+        symbolPlayer2.setImage(new Image(listNameImageSigne[indexPlayer2Signe]));
     }
 
     @FXML
@@ -140,22 +140,22 @@ private Pane backgroundPPPlayer1;
 
     @FXML
     void rightSymbolPlayer1(ActionEvent event) {
-        if(indexPlayer1Signe==listNameImagePP.length-1){
+        if(indexPlayer1Signe==listNameImageSigne.length-1){
             indexPlayer1Signe = 0;
         }else{
             indexPlayer1Signe++;
         }
-        symbolPlayer1.setImage(new Image(listNameImagePP[indexPlayer1Signe]));
+        symbolPlayer1.setImage(new Image(listNameImageSigne[indexPlayer1Signe]));
     }
 
     @FXML
     void rightSymbolePlayer2(ActionEvent event) {
-        if(indexPlayer2Signe==listNameImagePP.length-1){
+        if(indexPlayer2Signe==listNameImageSigne.length-1){
             indexPlayer2Signe = 0;
         }else{
             indexPlayer2Signe++;
         }
-        symbolPlayer2.setImage(new Image(listNameImagePP[indexPlayer2Signe]));
+        symbolPlayer2.setImage(new Image(listNameImageSigne[indexPlayer2Signe]));
     }
     public static String getImagePPPlayer1(){
         return listNameImagePP[indexPlayer1PP];
@@ -163,10 +163,11 @@ private Pane backgroundPPPlayer1;
     public static String getImagePPPlayer2(){
         return listNameImagePP[indexPlayer2PP];
     }public static String getSignePlayer1(){
-        return listNameImagePP[indexPlayer1Signe];
+        System.out.println(listNameImageSigne[indexPlayer1Signe]);
+        return listNameImageSigne[indexPlayer1Signe];
     }
     public static String getSignePlayer2(){
-        return listNameImagePP[indexPlayer2Signe];
+        return listNameImageSigne[indexPlayer2Signe];
     }
 
     @FXML

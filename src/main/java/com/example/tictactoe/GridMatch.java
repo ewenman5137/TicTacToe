@@ -176,7 +176,51 @@ public void moveOfBot(){
 
     }
     public void moveOfExpert(){
-
+            if(party.getRoundPlayer2()){
+                int bestScore = -1000;
+                int bestMove = -1;
+                Button[] listNameButton = {button0, button1, button2, button3, button4, button5, button6, button7, button8};
+                for (int i = 0; i < 9; i++) {
+                    if(listNameButton[i].getText()==""){
+                        // try this spot
+                        listNameButton[i].setText("O");
+                        int score = minimax(listNameButton, false);
+                        listNameButton[i].setText(""); // reset to original state
+                        if (score > bestScore) {
+                            bestScore = score;
+                            bestMove = i;
+                        }
+                    }
+                }
+                if(bestMove != -1) {
+                    addOOnButton(listNameButton[bestMove]);
+                }
+            }
+        }
+    int minimax(Button[] listNameButton, boolean isMaximizing) {
+        if (isMaximizing) {
+            int bestScore = -1000;
+            for (int i = 0; i < 9; i++) {
+                if(listNameButton[i].getText()==""){
+                    listNameButton[i].setText("O");
+                    int score = minimax(listNameButton, false);
+                    listNameButton[i].setText(""); // reset to original state
+                    bestScore = Math.max(score, bestScore);
+                }
+            }
+            return bestScore;
+        } else {
+            int bestScore = 1000;
+            for (int i = 0; i < 9; i++) {
+                if(listNameButton[i].getText()==""){
+                    listNameButton[i].setText("X");
+                    int score = minimax(listNameButton, true);
+                    listNameButton[i].setText(""); // reset to original state
+                    bestScore = Math.min(score, bestScore);
+                }
+            }
+            return bestScore;
+        }
     }
     public void addXOnButton(Button button){
         backgroundPPPlayer1.setStyle("-fx-border-color: black");
