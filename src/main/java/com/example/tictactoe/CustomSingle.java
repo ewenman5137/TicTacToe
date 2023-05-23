@@ -55,7 +55,7 @@ public class CustomSingle {
     int x=0;
     @FXML
     void leftPPPlayer1(ActionEvent event) {
-        ppPlayer1.setImage(new Image("baleine.png"));
+        ppPlayer1.setImage(new Image("/baleine.png"));
         System.out.println("hello");
         x++;
     }
