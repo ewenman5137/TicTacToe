@@ -27,7 +27,7 @@
       </Label>
       <Pane fx:id="backgroundPPPlayer1" layoutX="275.0" layoutY="187.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #1F1818; -fx-background-radius: 100%; -fx-border-color: white; -fx-border-radius: 100%;">
          <children>
-            <ImageView fx:id="ppPlayer1" fitHeight="105.0" fitWidth="105.0" layoutX="23.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="ppPlayer1" fitHeight="105.0" fitWidth="105.0" layoutX="23.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@dinosaure.png" />
                </image>
@@ -43,7 +43,7 @@
          <children>
             <ImageView fx:id="symbolPlayer1" fitHeight="105.0" fitWidth="105.0" layoutX="23.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@fermer-la-croix.png" />
+                  <Image url="@../../../fermer-la-croix.png" />
                </image>
             </ImageView>
          </children>

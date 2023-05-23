@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -50,10 +51,15 @@ public class CustomSingle {
         stage.close();
     }
 
+    String[] listNameImagePP={"/image/baleine.png","grenouille.png","lelephant.png","bird.png","perroquet.png","singe.png","tortue.png"};
+    int x=0;
     @FXML
     void leftPPPlayer1(ActionEvent event) {
-
+        ppPlayer1.setImage(new Image("baleine.png"));
+        System.out.println("hello");
+        x++;
     }
+
 
     @FXML
     void leftSymbolPlayer1(ActionEvent event) {

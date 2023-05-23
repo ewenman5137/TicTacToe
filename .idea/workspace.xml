@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e5bb6c1-3b34-4a38-a7dc-859808b628dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/baleine.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/image/bird.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/image/grenouille.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/image/lelephant.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/image/perroquet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/image/singe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/image/tortue.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/CustomSingle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/CustomSingle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/GridMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/GridMatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/SinglePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/SinglePlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/Custom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/Custom.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/CustomSingle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/CustomSingle.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +69,9 @@
       <recent name="D:\GitEspace\TicTacToe\src\main\java\com\example\tictactoe" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\GitEspace\TicTacToe\src\main\resources" />
       <recent name="D:\GitEspace\TicTacToe\src\main\java\com\example\tictactoe" />
+      <recent name="D:\GitEspace\TicTacToe\src\main\java\com\example\tictactoe\image" />
+      <recent name="D:\GitEspace\TicTacToe\src\main\resources" />
       <recent name="E:\test_projet\TicTacToe\src\main\resources\com\example\tictactoe" />
     </key>
   </component>
@@ -123,6 +128,7 @@
       <workItem from="1684775584850" duration="4850000" />
       <workItem from="1684822606535" duration="1797000" />
       <workItem from="1684827352770" duration="2761000" />
+      <workItem from="1684833145438" duration="3296000" />
     </task>
     <servers />
   </component>
