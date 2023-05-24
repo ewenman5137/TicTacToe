@@ -47,7 +47,7 @@ public class CustomSingle {
 
 
     static String[] listNameImagePP={"baleine.png","grenouille.png","lelephant.png","bird.png","perroquet.png","singe.png","tortue.png"};
-    static String[] listNameImageSigne={"baleine.png","grenouille.png","lelephant.png","bird.png","perroquet.png","singe.png","tortue.png"};
+    static String[] listNameImageSigneCroix={"fermer-la-croix.png","croitDessin.png","croitRond.png","croixContour.png","croixRouge.png","croixRougeAndWhite.png","traverser.png"};
     static int x=0;
     static int y=0;
 
@@ -76,29 +76,29 @@ public class CustomSingle {
     @FXML
     void leftSymbolPlayer1(ActionEvent event) {
         if(y==0){
-            y = listNameImageSigne.length-1;
+            y = listNameImageSigneCroix.length-1;
         }else{
             y--;
         }
-        symbolPlayer1.setImage(new Image(listNameImageSigne[y]));
+        symbolPlayer1.setImage(new Image(listNameImageSigneCroix[y]));
     }
 
 
 
     @FXML
     void rightSymbolPlayer1(ActionEvent event) {
-        if(y==listNameImageSigne.length-1){
+        if(y==listNameImageSigneCroix.length-1){
             y = 0;
         }else{
             y++;
         }
-        symbolPlayer1.setImage(new Image(listNameImageSigne[y]));
+        symbolPlayer1.setImage(new Image(listNameImageSigneCroix[y]));
     }
     public static String getImage(){
         return listNameImagePP[x];
     }
     public static String getSigne(){
-        return listNameImageSigne[y];
+        return listNameImageSigneCroix[y];
     }
     @FXML
     void goToTheMatch(ActionEvent event) throws IOException {
