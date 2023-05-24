@@ -79,7 +79,7 @@ public class GridMatch{
 
     @FXML
     private Label roundAndEndMatch;
-    private int x=0;
+    private int x=1;
     Image croixToExitPageLiens = new Image("fermer-la-croix.png");
     ImageView croixToExitPage = new ImageView(croixToExitPageLiens);
     private static Party party;
@@ -99,23 +99,23 @@ public class GridMatch{
         setParty(party);
     }
     public void setParty(Party party){
-        namePlayer1.setText(party.getNamePlayer1());
-        namePlayer2.setText(party.getNamePlayer2());
+        namePlayer1.setText(party.getPlayer1().getName());
+        namePlayer2.setText(party.getPlayer2().getName());
         scorePlayer1.setText(""+ party.getScorePlayer1());
         scorePlayer2.setText(""+ party.getScorePlayer2());
         croixToExitPage.setFitHeight(25);
         croixToExitPage.setFitWidth(25);
         ppPlayer1.setImage(new Image(party.getPlayer1().getImage()));
         ppPlayer2.setImage(new Image(party.getPlayer2().getImage()));
-        if(party.getRoundPlayer1()){
+        if(party.getPlayer1().getRound()){
             backgroundPPPlayer1.setStyle("-fx-border-color: blue");
             backgroundPPPlayer2.setStyle("-fx-border-color: black");
-            roundAndEndMatch.setText("it's the turn of "+party.getNamePlayer1());
+            roundAndEndMatch.setText("it's the turn of "+party.getPlayer1().getName());
         }
         else{
             backgroundPPPlayer1.setStyle("-fx-border-color: black");
             backgroundPPPlayer2.setStyle("-fx-border-color: Blue");
-            roundAndEndMatch.setText("it's the turn of "+party.getNamePlayer2());
+            roundAndEndMatch.setText("it's the turn of "+party.getPlayer2().getName());
         }
     }
 
@@ -123,39 +123,32 @@ public class GridMatch{
     void onClick(ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
         if (clickedButton.getText().equals("")) {
-            System.out.println(party.getRoundPlayer1());
-            if(x<=9){
-                if (party.getRoundPlayer1()) {
-                    addXOnButton(clickedButton);
-                    if(verifieEtatGrille()){
-                        giveButtonWin();
-                    }
-                    if(party.getBot()&&!verifieEtatGrille()){
-                        moveOfBot();
-                        if(verifieEtatGrille()){
-                            giveButtonWin();
-                        }
-                    }
-                }else{
-                    addOOnButton(clickedButton);
-                    if(verifieEtatGrille()){
-                        giveButtonWin();
-                    }
-                }
-                x++;
-            }
-            else{
+            if (party.getPlayer1().getRound()) {
+                addXOnButton(clickedButton);
                 if(verifieEtatGrille()){
-                    partyNull();
+                    giveButtonWin();
+                }
+                if(party.getPlayer2().getBot()&&!verifieEtatGrille()){
+                    moveOfBot();
+                    if(verifieEtatGrille()){
+                        giveButtonWin();
+                    }
+                }
+            }else{
+                addOOnButton(clickedButton);
+                if(verifieEtatGrille()){
+                    giveButtonWin();
                 }
             }
-
-
+        }
+        if(x>=9&&!verifieEtatGrille()){
+            System.out.println("Passe \n");
+            partyNull();
         }
     }
 public void moveOfBot(){
-        if(party.getRoundPlayer2()){
-            if(party.getNamePlayer2().equals("Jean")){
+        if(party.getPlayer2().getRound()&&party.getPlayer2().getBot()){
+            if(party.getPlayer2().getName().equals("Jean")){
                 moveOfEasy();
             }else{
                 moveOfExpert();
@@ -163,7 +156,7 @@ public void moveOfBot(){
         }
     }
     public void moveOfEasy(){
-        if(party.getRoundPlayer2()){
+        if(party.getPlayer2().getRound()){
             Button[] listNameButton = {button0, button1, button2, button3, button4, button5, button6, button7, button8};
             for (int i = 0; i < 9; i++) {
                 if(listNameButton[i].getText()==""){
@@ -176,7 +169,7 @@ public void moveOfBot(){
 
     }
     public void moveOfExpert(){
-            if(party.getRoundPlayer2()){
+            if(party.getPlayer2().getRound()){
                 int bestScore = -1000;
                 int bestMove = -1;
                 Button[] listNameButton = {button0, button1, button2, button3, button4, button5, button6, button7, button8};
@@ -231,7 +224,8 @@ public void moveOfBot(){
         croix.setFitWidth(60);
         button.setGraphic(croix);
         button.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-        roundAndEndMatch.setText("it's the turn of "+party.getNamePlayer1());
+        roundAndEndMatch.setText("it's the turn of "+party.getPlayer1().getName());
+        x++;
         party.tour();
     }
     public void addOOnButton(Button button){
@@ -243,7 +237,8 @@ public void moveOfBot(){
         button.setGraphic(circle);
         button.setText("O");
         button.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-        roundAndEndMatch.setText("it's the turn of "+party.getNamePlayer2());
+        roundAndEndMatch.setText("it's the turn of "+party.getPlayer2().getName());
+        x++;
         party.tour();
     }
 
@@ -270,7 +265,7 @@ public void moveOfBot(){
                                 listNameButton[i].setDisable(true);
                             }
                         }
-                        roundAndEndMatch.setText("Felicitation "+party.getNamePlayer1());
+                        roundAndEndMatch.setText("Felicitation "+party.getPlayer1().getName());
                         break;
                     case "O":
                         party.player2Win();
@@ -280,7 +275,7 @@ public void moveOfBot(){
                                 listNameButton[i].setDisable(true);
                             }
                         }
-                        roundAndEndMatch.setText("Felicitation "+party.getNamePlayer2());
+                        roundAndEndMatch.setText("Felicitation "+party.getPlayer2().getName());
                         break;
                     default:
                         break;

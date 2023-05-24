@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e5bb6c1-3b34-4a38-a7dc-859808b628dd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/cercle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/traverser.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Bot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Custom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Custom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/GridMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/GridMatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Party.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/Party.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,10 +66,10 @@
       <recent name="D:\GitEspace\TicTacToe\src\main\java\com\example\tictactoe" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitEspace\TicTacToe\src\main\resources" />
       <recent name="E:\test_projet\TicTacToe\src\main\java\com\example\tictactoe\image" />
       <recent name="D:\GitEspace\TicTacToe\src\main\java\com\example\tictactoe" />
       <recent name="D:\GitEspace\TicTacToe\src\main\java\com\example\tictactoe\image" />
-      <recent name="D:\GitEspace\TicTacToe\src\main\resources" />
       <recent name="E:\test_projet\TicTacToe\src\main\resources\com\example\tictactoe" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -130,6 +136,7 @@
       <workItem from="1684883295095" duration="1712000" />
       <workItem from="1684908240582" duration="788000" />
       <workItem from="1684914120263" duration="3000" />
+      <workItem from="1684914155701" duration="3076000" />
     </task>
     <servers />
   </component>
