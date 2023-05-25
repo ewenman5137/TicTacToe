@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e5bb6c1-3b34-4a38-a7dc-859808b628dd" name="Changes" comment="" />
+    <list default="true" id="2e5bb6c1-3b34-4a38-a7dc-859808b628dd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/accueil.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/cercle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/fermer-la-croix.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tictactoe/signe-de-la-croix.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/Multiplayer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tictactoe/Multiplayer.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,6 +137,7 @@
       <workItem from="1684914120263" duration="3000" />
       <workItem from="1684914155701" duration="3751000" />
       <workItem from="1684918786809" duration="35000" />
+      <workItem from="1685005345455" duration="788000" />
     </task>
     <servers />
   </component>

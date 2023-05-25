@@ -82,7 +82,7 @@
          <graphic>
             <ImageView fitHeight="52.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../java/com/example/tictactoe/fermer-la-croix.png" />
+                  <Image url="@../../../../java/com/example/tictactoe/accueil.png" />
                </image>
             </ImageView>
          </graphic>
