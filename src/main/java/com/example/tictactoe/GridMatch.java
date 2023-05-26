@@ -13,7 +13,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+
 import java.io.IOException;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Random;
 
 
 public class GridMatch{
@@ -158,62 +162,18 @@ public void moveOfBot(){
     public void moveOfEasy(){
         if(party.getPlayer2().getRound()){
             Button[] listNameButton = {button0, button1, button2, button3, button4, button5, button6, button7, button8};
+            List<Button> listNameButtonVide = new ArrayList<Button>();
             for (int i = 0; i < 9; i++) {
                 if(listNameButton[i].getText()==""){
-                    System.out.println(listNameButton[i]);
-                    addOOnButton(listNameButton[i]);
-                    break;
+                    listNameButtonVide.add(listNameButton[i]);
                 }
             }
+            Random random = new Random();
+            addOOnButton(listNameButtonVide.get(random.nextInt(listNameButtonVide.size())));
         }
 
     }
-    public void moveOfExpert(){
-            if(party.getPlayer2().getRound()){
-                int bestScore = -1000;
-                int bestMove = -1;
-                Button[] listNameButton = {button0, button1, button2, button3, button4, button5, button6, button7, button8};
-                for (int i = 0; i < 9; i++) {
-                    if(listNameButton[i].getText()==""){
-                        // try this spot
-                        listNameButton[i].setText("O");
-                        int score = minimax(listNameButton, false);
-                        listNameButton[i].setText(""); // reset to original state
-                        if (score > bestScore) {
-                            bestScore = score;
-                            bestMove = i;
-                        }
-                    }
-                }
-                if(bestMove != -1) {
-                    addOOnButton(listNameButton[bestMove]);
-                }
-            }
-        }
-    int minimax(Button[] listNameButton, boolean isMaximizing) {
-        if (isMaximizing) {
-            int bestScore = -1000;
-            for (int i = 0; i < 9; i++) {
-                if(listNameButton[i].getText()==""){
-                    listNameButton[i].setText("O");
-                    int score = minimax(listNameButton, false);
-                    listNameButton[i].setText(""); // reset to original state
-                    bestScore = Math.max(score, bestScore);
-                }
-            }
-            return bestScore;
-        } else {
-            int bestScore = 1000;
-            for (int i = 0; i < 9; i++) {
-                if(listNameButton[i].getText()==""){
-                    listNameButton[i].setText("X");
-                    int score = minimax(listNameButton, true);
-                    listNameButton[i].setText(""); // reset to original state
-                    bestScore = Math.min(score, bestScore);
-                }
-            }
-            return bestScore;
-        }
+    public void moveOfExpert() {
     }
     public void addXOnButton(Button button){
         backgroundPPPlayer1.setStyle("-fx-border-color: black");
