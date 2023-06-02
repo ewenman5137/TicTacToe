@@ -49,11 +49,11 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="buttonHome" layoutX="600.0" layoutY="23.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #27265A;" textFill="WHITE">
+      <Button fx:id="buttonHome" layoutX="600.0" layoutY="23.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent;" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="52.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../java/com/example/tictactoe/accueil.png" />
+                  <Image url="@../../../home.png" />
                </image>
             </ImageView>
          </graphic>
